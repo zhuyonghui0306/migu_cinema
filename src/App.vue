@@ -1,23 +1,32 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+   <search></search>
+   <navbar></navbar>
+    <section>
+        <router-view></router-view>
+   </section>
+  <footers></footers>
   </div>
 </template>
 
 <script>
+import navbar from "./components/navbar";
+import search from "./components/search";
+import footers from "./components/footer";
+
+
 export default {
-  name: 'App'
+  data(){
+      return{}
+  },
+  components:{
+    navbar,
+    search,
+    footers
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
