@@ -1,16 +1,12 @@
 <template>
   <div class="hello">
-  我是commend
+  watch
   </div>
 </template>
 
 <script>
 export default {
   
-return:{
-	
-}
-
 }
 </script>
 

@@ -16,38 +16,33 @@
       </div>
 
 
-	</div>
+  </div>
 </template>
 
 <script>
-		import axios from "axios";
-		import Swiper from 'swiper';
+    import axios from "axios";
+    import Swiper from 'swiper';
 import 'swiper/dist/css/swiper.min.css';
 export default {
   data(){
 
-			return{
-				datalist:[],
+      return{
+       
+      }
 
-			}
-
-	},
-	mounted(){
-		axios.post("/lovev/miguMovie/data/seeFilmData.jsp","nodeId=70035127&pagesize=3&pageidx=1").then(res=>{
-				console.log(res.data[0].list);
-				console.log(res.data[0].list[0].picList[0].imgSrc);
-
-				this.datalist=res.data[0].list
-			})
-	},
-	            updated(){
+  },
+         updated(){
        var swiperObj =  new Swiper('#swiper', {
         loop: true,
         pagination: '.swiper-pagination',
         autoplay: 3000,
         paginationClickable: true
       });
-         }   
+         }   ,
+         props:[
+          datalist
+
+         ]
   
 
 }
@@ -55,7 +50,7 @@ export default {
 
 
 <style scoped>
-		html, body {
+    html, body {
       position: relative;
       height: 100%;
     }

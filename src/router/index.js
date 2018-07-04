@@ -11,6 +11,8 @@ import seeFilm from "../components/seeFilm"
 import video from "../components/video"
 import comingSoon from "../components/comingSoon"
 import nowPlaying from "../components/nowPlaying"
+import my from "../components/my"
+import watchfilm from "../components/watchfilm"
 
 export default new Router({
   routes: [
@@ -52,6 +54,14 @@ export default new Router({
     {
       path: '/video',
       component: video
+    },
+    {
+      path: '/my',
+      component: my
+    },
+     {
+      path: '/watchfilm',
+      component: watchfilm
     },
     {
     	path:"*",

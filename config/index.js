@@ -10,7 +10,16 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+            '/lovev': {
+              target: 'http://movie.miguvideo.com',
+              host: 'movie.miguvideo.com',
+              changeOrigin:true,
+             
+          }
+
+
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
