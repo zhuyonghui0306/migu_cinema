@@ -31,9 +31,14 @@ export default new Router({
     			component:nowPlaying
     		},
     		{
-    			path:"nowPlaying", 
-    			component:nowPlaying
+    			path:"comingSoon", 
+    			component:comingSoon
     		},
+        ,
+        {
+          path:"/film",
+          redirect:"/film/nowplaying"
+        }
       ]
     },
     {

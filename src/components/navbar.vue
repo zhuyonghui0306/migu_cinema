@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
-  navbar  dww 
+	navber
+	  
+
   </div>
 </template>
 
@@ -12,5 +14,5 @@ export default {
 
 
 <style scoped>
-
+	
 </style>

@@ -3,7 +3,7 @@
    <search></search>
    <navbar></navbar>
     <section>
-        <router-view></router-view>
+    <router-view></router-view>
    </section>
   <footers></footers>
   </div>
