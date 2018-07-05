@@ -3,7 +3,7 @@
 
         <div class="swiper-container" id="swiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="(data,$index) in datalist">
+          <div class="swiper-slide" v-for="(data,$index) in lists" :key="data.length">
             <a >
       
                 <img :src="'http://movie.miguvideo.com/publish/i_www'+ data.imgSrc"/>
@@ -16,38 +16,45 @@
       </div>
 
 
-	</div>
+  </div>
 </template>
 
 <script>
-		import axios from "axios";
-		import Swiper from 'swiper';
+    import axios from "axios";
+    import Swiper from 'swiper';
 import 'swiper/dist/css/swiper.min.css';
+ import {mapState} from "vuex";
 export default {
   data(){
 
-			return{
-				datalist:[],
+      return{
+        datalist:[],
 
-			}
+      }
 
-	},
-	mounted(){
-		axios.post("/lovev/miguMovie/data/seeFilmData.jsp","nodeId=70035127&pagesize=3&pageidx=1").then(res=>{
-				console.log(res.data[0].list);
-				console.log(res.data[0].list[0].picList[0].imgSrc);
-
-				this.datalist=res.data[0].list
-			})
-	},
-	            updated(){
-       var swiperObj =  new Swiper('#swiper', {
+  },
+  mounted(){
+     var swiperObj =  new Swiper('#swiper', {
         loop: true,
         pagination: '.swiper-pagination',
-        autoplay: 3000,
+        autoplay: 2000,
         paginationClickable: true
       });
-         }   
+  
+if(this.lists.length==0){
+        //发起请求
+        this.$store.dispatch("getlist");
+      }else{
+
+      }
+
+  },
+              updated(){
+      
+         }  ,
+         computed:{
+      ...mapState(["lists"])
+    } 
   
 
 }
@@ -55,7 +62,7 @@ export default {
 
 
 <style scoped>
-		html, body {
+    html, body {
       position: relative;
       height: 100%;
     }

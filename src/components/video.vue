@@ -38,6 +38,7 @@ export default {
 
 
 <style scoped>
+	ul{margin: 0;padding: 0}
 	img{width: 100%}
 	li{list-style: none;font-size: 12px;position:relative;border-bottom: 3px solid #ccc;width: 100%;padding-bottom:5px}
 	li p{position: absolute;
