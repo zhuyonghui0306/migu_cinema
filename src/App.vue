@@ -2,7 +2,7 @@
   <div id="app">
    <search></search>
    <navbar></navbar>
-    <section>
+    <section id="main">
     <router-view></router-view>
    </section>
   <footers></footers>
@@ -28,5 +28,5 @@ export default {
 </script>
 
 <style>
-
+#main{display:flex;flex-direction: column;overflow: auto}
 </style>

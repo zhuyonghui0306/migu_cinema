@@ -8,7 +8,9 @@ const store = new Vuex.Store({
 
 	state:{
 		list:[],
-		lists:[]
+		lists:[],
+		alllist:[],
+		alllists:[]
 	},
 
 	actions:{
@@ -17,6 +19,7 @@ const store = new Vuex.Store({
 				
 				store.commit("getlists",res.data[0].list);
 			
+			
 			});
 		},
 		getli(){
@@ -24,6 +27,7 @@ const store = new Vuex.Store({
 				
 				store.commit("getlistfilms",res.data[0].list);
 			
+
 			});
 		}
 	},
@@ -31,12 +35,14 @@ const store = new Vuex.Store({
 	mutations:{
 getlists(state,payload){
 			state.lists = payload;
-			console.log(payload)
+		
 		},
 	getlistfilms(state,payload){
 			state.list = payload;
 			console.log(payload)
-		}
+		},
+		
+	
 	
 		}
 })
