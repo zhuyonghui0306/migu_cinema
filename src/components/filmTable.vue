@@ -1,6 +1,9 @@
 <template>
    <div id="filmTable">
-
+<div v-infinite-scroll="loadMore"
+  infinite-scroll-disabled="loading"
+  infinite-scroll-immediate-check =  "false"
+  infinite-scroll-distance="50">
         <div class="swiper-container" id="swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="(data,$index) in lists" :key="data.length">
@@ -17,6 +20,7 @@
       </div>
   
 
+  
   <p>{{title}}</p>
 
  <div class="swiper-container" id="swipers">
@@ -31,12 +35,11 @@
     
       </div>
 
+<p>{{title}}</p>
 
-  <p>{{title2}}</p>
-
- <div class="swiper-container" id="swipes">
+ <div class="swiper-container" id="swipers">
         <div class="swiper-wrapper">
-          <div id ="imgs" class="swiper-slide" v-for="(data,$index) in dl" :key="data.length">
+          <div id ="imgs" class="swiper-slide" v-for="(data,$index) in datalist" :key="data.length">
             <a >
  
               <img :src="'http://movie.miguvideo.com/'+ data.imgSrcV" class="">
@@ -45,6 +48,8 @@
         </div>
     
       </div>
+ 
+</div>
 
   </div>
 </template>
@@ -61,7 +66,10 @@ export default {
         datalist:[],
         title:'',
         dl:[],
-        title2:''
+        title2:'',
+        current:1, 
+        total:0,
+        loading:false
       }
 
   },
@@ -113,6 +121,12 @@ if(this.lists.length==0){
          computed:{
       ...mapState(["lists"])
     } ,
+    methods:{
+      loadMore(){
+        console.log("滚动到底部了")
+       
+      }
+    }
   
 }
 </script>
