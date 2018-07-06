@@ -16,7 +16,13 @@ module.exports = {
               host: 'movie.miguvideo.com',
               changeOrigin:true,
              
-          }
+          },
+             '/publish':{
+               target: 'http://movie.miguvideo.com',
+              host: 'movie.miguvideo.com',
+              changeOrigin:true,
+             }
+          
 
 
     },

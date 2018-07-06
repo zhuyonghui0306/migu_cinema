@@ -1,9 +1,10 @@
 <template>
   <div class="hello">
 	<ul class="video">
-	   <li v-for="data in datalist"  :key="data.id">
+	   <li v-for="data in datalist" @click="handleClick(data.picList[0].REDREICT_ID)" :key="data.picList[0].REDREICT_ID">
 				<img :src="'http://movie.miguvideo.com/publish/i_www'+ data.picList[0].imgSrc">
 				<p>{{data.name}}</p>
+				<b>{{data.picList[3]}}</b>
 
 			</li>
 	</ul>
@@ -12,6 +13,7 @@
 </template>
 
 <script>
+	import router from "../router";
 	import axios from "axios";
 
 export default {
@@ -26,12 +28,21 @@ export default {
 	},
 	mounted(){
 		axios.post("/lovev/miguMovie/data/seeFilmData.jsp","nodeId=70027030&pagesize=3&pageidx=1").then(res=>{
-				console.log(res.data[0].list);
-				console.log(res.data[0].list[0].picList[0].imgSrc);
+				//console.log(res.data[0].list);
+				//console.log(res.data[0].list[0].picList[0].imgSrc);
 
-				this.datalist=res.data[0].list
+				this.datalist=res.data[0].list;
+				console.log(res.data[0].list[1].picList[0].REDREICT_ID)
 			})
+	},
+	methods:{
+		handleClick(id){
+				
+
+				router.push(`/detail/${id}`) ; 
+				
 	}
+}
   
 }
 </script>

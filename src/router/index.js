@@ -13,6 +13,7 @@ import comingSoon from "../components/comingSoon"
 import nowPlaying from "../components/nowPlaying"
 import my from "../components/my"
 import watchfilm from "../components/watchfilm"
+import Detail from "../components/detail"
 
 export default new Router({
   routes: [
@@ -62,6 +63,10 @@ export default new Router({
      {
       path: '/watchfilm',
       component: watchfilm
+    },
+    {
+      path: '/detail/:id',
+      component: Detail
     },
     {
     	path:"*",

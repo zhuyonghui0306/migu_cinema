@@ -18,7 +18,7 @@ export default {
 
 
 <style scoped>
-	.footer{position: fixed;bottom: 0;z-index: 10px;width: 100%}
+	.footer{position: fixed;bottom: 0;z-index: 10;width: 100%}
 	ul,li{margin: 0;padding: 0}
 	
 	ul{		text-align: center;
