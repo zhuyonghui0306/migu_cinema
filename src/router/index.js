@@ -14,6 +14,8 @@ import nowPlaying from "../components/nowPlaying"
 import my from "../components/my"
 import watchfilm from "../components/watchfilm"
 import Detail from "../components/detail"
+import log from "../components/log"
+import register from "../components/register"
 
 export default new Router({
   routes: [
@@ -67,6 +69,14 @@ export default new Router({
     {
       path: '/detail/:id',
       component: Detail
+    },
+    {
+      path: '/log',
+     component: log
+    },
+    {
+      path: '/register',
+     component: register
     },
     {
     	path:"*",

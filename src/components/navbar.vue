@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-	<div class="navbar">
+	<div class="navbar" :v-if="show" >
 		<ul>
 	         <router-link to="/commend" tag="li" activeClass="active">推荐</router-link>
 	         <router-link to="/watchFilm" tag="li" activeClass="active">看片</router-link>
@@ -15,8 +15,18 @@
 </template>
 
 <script>
+	 import {mapState} from "vuex";
 export default {
-  
+  computed:{
+
+			...mapState(["show"])			
+
+		},
+
+		mounted(){
+			this.$store.commit("isshow",false);
+			console.log()
+		}
 }
 </script>
 

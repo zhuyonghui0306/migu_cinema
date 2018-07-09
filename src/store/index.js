@@ -10,7 +10,8 @@ const store = new Vuex.Store({
 		list:[],
 		lists:[],
 		alllist:[],
-		alllists:[]
+		alllists:[],
+		show:true
 	},
 
 	actions:{
@@ -42,7 +43,10 @@ getlists(state,payload){
 			console.log(payload)
 		},
 		
-	
+	isshow(state,payload){
+		state.show = payload;
+		console.log(state.show)
+	}
 	
 		}
 })

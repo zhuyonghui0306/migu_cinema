@@ -21,8 +21,19 @@ module.exports = {
                target: 'http://movie.miguvideo.com',
               host: 'movie.miguvideo.com',
               changeOrigin:true,
-             }
-          
+             },
+             '/ap': {
+              target: 'http://localhost:3000',
+              host: 'localhost:3000',
+              changeOrigin:true,
+             
+          },
+          '/bp': {
+              target: 'http://localhost:3000',
+              host: 'localhost:3000',
+              changeOrigin:true,
+             
+          },
 
 
     },

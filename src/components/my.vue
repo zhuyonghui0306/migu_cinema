@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
-  <a href="#"><b class="iconfont icon-electronics"></b>点击登录</a>
+  <router-link to="/log" tag="a" activeClass="active"><b class="iconfont icon-electronics"></b>点击登录</router-link>
+  
   <ul>
       <li><b class="iconfont icon-favorite"></b>收藏 </li>
       <li><b class="iconfont icon-edit"></b>影评</li>
